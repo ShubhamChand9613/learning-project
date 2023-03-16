@@ -6,7 +6,7 @@ function App() {
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
-            Demo
+            Demo Project
           </a>
           <button
             className="navbar-toggler"
