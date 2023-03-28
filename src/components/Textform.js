@@ -1,7 +1,7 @@
 import { hasFormSubmit } from '@testing-library/user-event/dist/utils';
 import React, {useState} from 'react'
 
-export default function Textform() {
+export default function Textform(props) {
     const [text, setText] = useState('');
 
     const handleUpClick = () =>{
@@ -12,6 +12,7 @@ export default function Textform() {
     const clearText = () =>{
         let newText= ""
         setText(newText)
+        props.showAlert("Cleared Text", "success")
     }
     const handleOnChange = (event) =>{
         console.log("upper case was clicked")
@@ -71,7 +72,7 @@ const handleCopy = () =>{
     </div>
     <div className='container my-3'>
         <h1>Your Summary</h1>
-        <p>{text.split(" ").length} words and {text.length} characters</p>
+        <p>{text.split(/\s+/).length-1} words and {text.length} characters</p>
         <p>{0.008 * text.split('').length} minutes</p>
     </div>
     </>
